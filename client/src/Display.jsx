@@ -27,6 +27,7 @@ function Display() {
             return
         }
 
+        // Do I need this...bc the logic is in the controller/server...???
         const randomAnswer = answers[Math.floor(Math.random() * answers.length)]
         setCurrentAnswer(randomAnswer)
         setShowAnswer(true)

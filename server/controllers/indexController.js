@@ -1,5 +1,5 @@
 const indexController = (req, res) => {
-    res.json({ message: 'Crazy Answers' }) // Use res.json instead of res.render bc implementing React instead of ejs
+    res.json({ message: 'Crazy Answers' }) // Do I use title: instead of message:
 }
 
 module.exports = indexController
