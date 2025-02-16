@@ -1,7 +1,6 @@
 import { useState } from 'react'
 import './App.css'
 // import Button from './Button'
-import answers from './answers.js'
 
 function Display() {
     const [showAnswer, setShowAnswer] = useState(false)
@@ -10,7 +9,7 @@ function Display() {
     const [error, setError] = useState('')
     const [lastQuestion, setLastQuestion] = useState('')
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault()
 
         // Check for empty question field
@@ -28,11 +27,25 @@ function Display() {
         }
 
         // Do I need this...bc the logic is in the controller/server...???
-        const randomAnswer = answers[Math.floor(Math.random() * answers.length)]
-        setCurrentAnswer(randomAnswer)
-        setShowAnswer(true)
-        setLastQuestion(question)
+        // const randomAnswer = answers[Math.floor(Math.random() * answers.length)]
+        // setCurrentAnswer(randomAnswer)
+        // setShowAnswer(true)
         setError('')
+        setLastQuestion(question)
+
+        // Try/Catch...do i need a try/catch???
+        try {
+            const response = await fetch('http://localhost:3000/answer') // 3000 or 5000 ???
+            if (!response.ok) {
+                throw new Error('Failed to fetch answer')
+            }
+            const data = await response.json()
+            setCurrentAnswer(data.answer)
+            setShowAnswer(true)
+        } catch (err) {
+            setError('Error fetching answer. Try again later.')
+            setShowAnswer(false)
+        }
     }
 
     return (
@@ -44,7 +57,8 @@ function Display() {
                     id="question"
                     value={ question }
                     onChange={ (e) => setQuestion(e.target.value) } 
-                    placeholder="Ask your question..." />
+                    placeholder="Ask your question..." 
+                />
                 <button type="submit">Ask!</button>
             </form>
             {error && <p style={{color: 'red'}}>{error}</p>}

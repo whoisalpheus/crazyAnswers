@@ -1,4 +1,4 @@
-import answers from '../answers'
+const answers = require('../answers')
 
 const answerController = (req, res) => {
     const answerGenerator = answers[Math.floor(Math.random() * answers.length)]
