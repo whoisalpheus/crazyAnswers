@@ -1,2 +1,3 @@
 # crazyAnswers
-Continuation of crazyAnswers....tying everything together...PERN stack
+PERN stack
+Currently not using Postgres db...using a simple db for the answers.
