@@ -35,7 +35,7 @@ function Display() {
 
         // Try/Catch...do i need a try/catch???
         try {
-            const response = await fetch('http://localhost:3000/answer') // 3000 or 5000 ???
+            const response = await fetch('http://localhost:5000/answer') // 3000 or 5000 ???
             if (!response.ok) {
                 throw new Error('Failed to fetch answer')
             }
@@ -50,7 +50,8 @@ function Display() {
 
     return (
         <>
-            <form onSubmit={ handleSubmit } action="" method="get" autoComplete='off'>
+            {/* form ... autoComplete='off' */}
+            <form onSubmit={ handleSubmit } action="" method="get">
                 <input 
                     type="text" 
                     name="question" 

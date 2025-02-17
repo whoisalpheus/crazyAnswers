@@ -47,11 +47,20 @@ input:focus {
   background-color: #3e5970;
 }
 
+/* input:-internal-autofill-selected {
+  appearance: menulist-button;
+  background-image: none !important;
+  background-color: light-dark(rgb(232, 240, 254), rgba(70, 90, 126, 0.4)) !important;
+  color: fieldtext !important;
+} */
+
 /* This is above my understanding...turned autocomplete off on the form instead for a quick fix */
 /* input:-webkit-autofill,
 input:-webkit-autofill:focus {
   transition: background-color 600000s 0s, #3e5970 600000s 0s;
 }
+
+rgb(232, 240, 254) original in background-color: light-dark....
 
 input[data-autocompleted] {
   background-color: transparent !important;
@@ -90,4 +99,124 @@ button:focus-visible {
   button {
     background-color: #999494;
   }
+}
+
+
+/* chrome devtools  */
+/* browser css */
+
+input:-internal-autofill-selected {
+  appearance: menulist-button;
+  background-image: none !important;
+  background-color: light-dark(rgb(232, 240, 254), rgba(70, 90, 126, 0.4)) !important;
+  color: fieldtext !important;
+}
+<style>
+input:focus {
+  background-color: #3e5970;
+}
+<style>
+input {
+  border-radius: 10px;
+  height: 25px;
+  background-color: #213547;
+  color: rgba(168, 159, 159, 0.87);
+  margin-bottom: 5px;
+}
+user agent stylesheet
+input:focus-visible {
+  outline-offset: 0px;
+}
+user agent stylesheet
+input:-internal-autofill-selected {
+  appearance: menulist-button;
+  background-image: none !important;
+  background-color: light-dark(rgb(232, 240, 254), rgba(70, 90, 126, 0.4)) !important;
+  color: fieldtext !important;
+}
+user agent stylesheet
+input:not([type="image" i], [type="range" i], [type="checkbox" i], [type="radio" i]) {
+  overflow-clip-margin: 0px !important;
+  overflow: clip !important;
+}
+user agent stylesheet
+input[type="text" i] {
+  padding-block: 1px;
+  padding-inline: 2px;
+}
+user agent stylesheet
+input:not([type="file" i], [type="image" i], [type="checkbox" i], [type="radio" i]) {
+}
+user agent stylesheet
+:focus-visible {
+  outline: -webkit-focus-ring-color auto 1px;
+}
+user agent stylesheet
+input {
+  font-style: ;
+  font-variant-ligatures: ;
+  font-variant-caps: ;
+  font-variant-numeric: ;
+  font-variant-east-asian: ;
+  font-variant-alternates: ;
+  font-variant-position: ;
+  font-variant-emoji: ;
+  font-weight: ;
+  font-stretch: ;
+  font-size: ;
+  font-family: ;
+  font-optical-sizing: ;
+  font-size-adjust: ;
+  font-kerning: ;
+  font-feature-settings: ;
+  font-variation-settings: ;
+  text-rendering: auto;
+  color: fieldtext;
+  letter-spacing: normal;
+  word-spacing: normal;
+  line-height: normal;
+  text-transform: none;
+  text-indent: 0px;
+  text-shadow: none;
+  display: inline-block;
+  text-align: start;
+  appearance: auto;
+  -webkit-rtl-ordering: logical;
+  cursor: text;
+  background-color: field;
+  margin: 0em;
+  padding: 1px 0px;
+  border-width: 2px;
+  border-style: inset;
+  border-color: light-dark(rgb(118, 118, 118), rgb(133, 133, 133));
+  border-image: initial;
+  padding-block: 1px;
+  padding-inline: 2px;
+}
+<style>
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+<style>
+@media (prefers-color-scheme: light) {
+  :root {
+      color: #213547;
+      background-color: #20ceec;
+  }
+}
+<style>
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+  color-scheme: light dark;
+  color: rgba(168, 159, 159, 0.87);
+  background-color: #242424;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
