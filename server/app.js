@@ -7,8 +7,6 @@ const answerRouter = require('./routes/answerRouter')
 
 const app = express()
 
-// No view engine...using React...
-
 app.use(cors())
 app.use(express.urlencoded({ extended: true })) // Needed without view engine??? Comment out???
 app.use(express.json()) // req.body???
@@ -17,6 +15,7 @@ app.use(express.json()) // req.body???
 app.get('/', indexRouter)
 app.get('/answer', answerRouter)
 
+// Needed for development???
 // if (process.env.NODE_ENV === 'development') {
 //     app.use(morgan('dev'))
 // }

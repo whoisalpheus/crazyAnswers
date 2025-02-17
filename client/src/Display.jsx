@@ -1,6 +1,5 @@
 import { useState } from 'react'
 import './App.css'
-// import Button from './Button'
 
 function Display() {
     const [showAnswer, setShowAnswer] = useState(false)
@@ -26,14 +25,9 @@ function Display() {
             return
         }
 
-        // Do I need this...bc the logic is in the controller/server...???
-        // const randomAnswer = answers[Math.floor(Math.random() * answers.length)]
-        // setCurrentAnswer(randomAnswer)
-        // setShowAnswer(true)
         setError('')
         setLastQuestion(question)
 
-        // Try/Catch...do i need a try/catch???
         try {
             const response = await fetch('http://localhost:5000/answer') // 3000 or 5000 ???
             if (!response.ok) {
@@ -50,7 +44,6 @@ function Display() {
 
     return (
         <>
-            {/* form ... autoComplete='off' */}
             <form onSubmit={ handleSubmit } action="" method="get">
                 <input 
                     type="text" 
