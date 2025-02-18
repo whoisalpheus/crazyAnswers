@@ -29,7 +29,7 @@ function Display() {
         setLastQuestion(question)
 
         try {
-            const response = await fetch('http://localhost:5000/answer') // 3000 or 5000 ???
+            const response = await fetch('https://crazyanswers-backend.onrender.com') // 3000 or 5000 ???
             if (!response.ok) {
                 throw new Error('Failed to fetch answer')
             }
