@@ -59,7 +59,7 @@ function Display() {
                 <button type="submit">Ask!</button>
             </form>
             {error && <p style={{color: 'red'}}>{error}</p>}
-            {showAnswer && !error && <p>{currentAnswer}</p>}
+            {showAnswer && !error && <h2>{currentAnswer}</h2>}
         </>
     )
 }

@@ -1,5 +1,5 @@
 body {
-  background-color: lightsteelblue;
+  background-color: rgb(33, 66, 136);
 }
 
 #root {
@@ -13,6 +13,7 @@ button {
   background-color: #213547;
   color: darkgrey;
   margin-left: 15px;
+  border: solid black;
 }
 
 .logo {
