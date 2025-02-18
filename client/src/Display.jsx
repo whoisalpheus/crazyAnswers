@@ -32,7 +32,7 @@ function Display() {
         // http://localhost:5000
 
         try {
-            const response = await fetch('https://crazyanswers-backend.onrender.com') // Use ENV_VAR for future...
+            const response = await fetch('https://crazyanswers-backend.onrender.com/answer') // Use ENV_VAR for future...
             if (!response.ok) {
                 throw new Error('Failed to fetch answer')
             }
