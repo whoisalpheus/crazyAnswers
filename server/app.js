@@ -7,7 +7,7 @@ const answerRouter = require('./routes/answerRouter')
 
 const app = express()
 
-app.use(cors({ origin: 'https://crazyanswers-backend.onrender.com' }))
+app.use(cors())
 app.use(express.urlencoded({ extended: true })) // Needed without view engine??? Comment out???
 app.use(express.json()) // req.body???
 
