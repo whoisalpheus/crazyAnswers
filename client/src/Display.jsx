@@ -28,8 +28,11 @@ function Display() {
         setError('')
         setLastQuestion(question)
 
+        // https://crazyanswers-backend.onrender.com
+        // http://localhost:5000
+
         try {
-            const response = await fetch('https://crazyanswers-backend.onrender.com') // 3000 or 5000 ???
+            const response = await fetch('https://crazyanswers-backend.onrender.com') // Use ENV_VAR for future...
             if (!response.ok) {
                 throw new Error('Failed to fetch answer')
             }
